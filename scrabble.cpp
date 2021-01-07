@@ -251,41 +251,6 @@ bool word_exist_in_dictionary(const char *word){
 
 }
 
-// void get_array_possible_words(const char* tiles, char* possible_words[]){
-
-// }
-
-
-// void permute(char* string, int starting_index, int ending_index) 
-// { 
-
-// } 
- 
-
-// int get_number_possible_permutations(const char* tiles){
-    
-//     int number_of_letters = strlen(tiles);
-//     int number_of_permutations = 0;
-    
-//     // Permutation formula -> n!/(n!-k!)
-//     int n_fact = factorial(number_of_letters);
-//     int n_k_fact;
-//     for (int i = 1; i < number_of_letters; i++){
-//         n_k_fact = factorial(number_of_letters-i);
-//         number_of_permutations += n_fact/(n_k_fact);
-//     }
-
-//     return number_of_permutations;
-// }
-
-// int factorial(int n){
-    
-//     if(n == 0)
-//         return 1;
-//     else
-//         return n*factorial(n-1);
-// }
-
 void clean_char_array(char *array){
   for(int i=0; array[i]!='\0'; i++){
     array[i] = '\0';

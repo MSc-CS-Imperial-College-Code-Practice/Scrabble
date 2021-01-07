@@ -25,7 +25,4 @@ bool word_solver(const char* word, char* tiles_in_hand, char* played_tiles,
 bool is_match(const char* word, const char* played_tiles);
 void remove_letter_at_index(char* string, int index);
 void get_back_letter_at_index(char* string, int index, char letter);
-// void get_array_possible_words(const char* tiles, char* possible_words[]);
-// int get_number_possible_permutations(const char* tiles);
-// int factorial(int n);
 void clean_char_array(char *array);
