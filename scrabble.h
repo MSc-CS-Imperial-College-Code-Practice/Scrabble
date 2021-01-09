@@ -23,6 +23,8 @@ bool word_exist_in_dictionary(const char *word);
 bool word_solver(const char* word, char* tiles_in_hand, char* played_tiles, 
     int used_letters);
 bool is_match(const char* word, const char* played_tiles);
+bool has_same_letters(const char* word, const char* played_tiles);
+int times_this_letter_in_string(const char* str, char chr);
 void remove_letter_at_index(char* string, int index);
 void get_back_letter_at_index(char* string, int index, char letter);
 void clean_char_array(char *array);

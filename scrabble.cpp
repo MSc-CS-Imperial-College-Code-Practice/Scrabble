@@ -142,7 +142,8 @@ int highest_scoring_word_from_tiles(const char* tiles,
 
     while(!in.eof()){
         in >> reader;
-        if(can_form_word_from_tiles(reader,tiles,word)){
+        if(has_same_letters(reader,tiles) &&
+            can_form_word_from_tiles(reader,tiles,word)){
             current_score = compute_score(word,score_modifiers);
             if(max_score < current_score){
                 max_score = current_score;
@@ -212,6 +213,36 @@ bool is_match(const char* word, const char* played_tiles){
         }
     }
     return true;
+}
+
+bool has_same_letters(const char* word, const char* played_tiles){
+    
+    if(strlen(word) != strlen(played_tiles))
+        return false;
+    
+    int count_1 = 0;
+    int count_2 = 0; 
+    int count_3 = 0;
+
+    for (int i = 0; i<strlen(word); i++){
+        count_1 +=times_this_letter_in_string(word, word[i]);
+        count_2 +=times_this_letter_in_string(played_tiles, word[i]);  
+    }
+    count_3 = times_this_letter_in_string(played_tiles, '?');
+
+    if(count_1 != count_2+count_3)
+        return false;
+    return true;
+}
+
+int times_this_letter_in_string(const char* str, char chr){
+
+    int count = 0;
+    for (int i = 0; i < strlen(str); i++){
+        if(str[i]==chr)
+            count++;
+    }
+    return count;
 }
 
 void remove_letter_at_index(char* string, int index){
